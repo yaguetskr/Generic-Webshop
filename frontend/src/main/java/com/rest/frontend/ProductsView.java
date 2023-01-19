@@ -4,6 +4,7 @@ package com.rest.frontend;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.vaadin.flow.component.button.Button;
+
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.grid.Grid;
@@ -11,6 +12,7 @@ import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
@@ -91,7 +93,7 @@ public class ProductsView extends VerticalLayout {
                     try {
                         api.edit(Integer.toString(optional.get().getId()),stocktf.getValue(),pricetf.getValue(),nametf.getValue());
                         temp = api.getall();
-                        Notification notification = Notification.show("Edited succesfully");
+                        Notification.show("Edited succesfully");
                         List<Product> templist = gson.fromJson(temp,new TypeToken<List<Product>>(){}.getType());
                         tabla.setItems(templist);
 
@@ -123,6 +125,144 @@ public class ProductsView extends VerticalLayout {
 
             }
         });
+
+
+        Button newproduct = new Button("Create new product");
+        add(newproduct);
+        newproduct.addClickListener(clickEvent -> {
+
+            Dialog dialog = new Dialog();
+            add(dialog);
+            dialog.open();
+            VerticalLayout layoutdialog = new VerticalLayout();
+            layoutdialog.add(new H3("Create new product:"));
+            layoutdialog.add("Stock:");
+            TextField stocktf= new TextField();
+            layoutdialog.add(stocktf);
+
+            layoutdialog.add("Price:");
+            TextField pricetf= new TextField();
+            layoutdialog.add(pricetf);
+
+            layoutdialog.add("Name:");
+            TextField nametf= new TextField();
+            layoutdialog.add(nametf);
+
+
+            Button Guardar = new Button("Guardar");
+
+            Guardar.addClickListener(clickEvent2 -> {
+
+                try {
+                    api.create(stocktf.getValue(),pricetf.getValue(),nametf.getValue());
+                    Notification.show("Product added succesfully");
+                    String temp = api.getall();
+                    List<Product> templist = gson.fromJson(temp,new TypeToken<List<Product>>(){}.getType());
+                    tabla.setItems(templist);
+                } catch (URISyntaxException e) {
+                    throw new RuntimeException(e);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
+            });
+
+            Button Cancel = new Button("Cancel");
+
+            Cancel.addClickListener(clickEvent2 -> {
+                dialog.close();
+            });
+
+
+
+            HorizontalLayout botones = new HorizontalLayout(Guardar, Cancel);
+
+            dialog.add(layoutdialog,botones);
+
+
+        });
+
+
+
+
+        Button deleteproduct = new Button("Delete product");
+        add(deleteproduct);
+        deleteproduct.addClickListener(clickEvent -> {
+
+            Dialog dialog = new Dialog();
+            add(dialog);
+            dialog.open();
+            VerticalLayout layoutdialog = new VerticalLayout();
+            layoutdialog.add(new H3("Delete product:"));
+
+            Select<Product> select = new Select<>();
+            select.setLabel("Product ID");
+            select.setItemLabelGenerator(Product::getName);
+            select.setItems(lista);
+            layoutdialog.add(select);
+
+
+
+
+            Button Delete = new Button("Delete");
+
+            Delete.addClickListener(clickEvent2 -> {
+
+                Dialog confirm=new Dialog();
+                add(confirm);
+                confirm.open();
+                VerticalLayout layoutconfirm=new VerticalLayout();
+                layoutconfirm.add(new H3("Are you sure you want to delete product "+select.getValue().getId()+" ("+select.getValue().getName()+")?"));
+
+
+                Button yes=new Button("Yes");
+
+                yes.addClickListener(yesevent -> {
+                    try {
+                        api.delete(select.getValue().getId());
+                        Notification.show("Product deleted succesfully");
+                        String temp = api.getall();
+                        List<Product> templist = gson.fromJson(temp,new TypeToken<List<Product>>(){}.getType());
+                        tabla.setItems(templist);
+                    } catch (URISyntaxException e) {
+                        throw new RuntimeException(e);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+
+                Button no=new Button("No");
+
+                no.addClickListener(noevent -> {
+                    confirm.close();
+                });
+                layoutconfirm.add(new HorizontalLayout(yes,no));
+
+
+                confirm.add(layoutconfirm);
+
+            });
+
+            Button Cancel = new Button("Cancel");
+
+            Cancel.addClickListener(clickEvent2 -> {
+                dialog.close();
+            });
+
+
+
+            HorizontalLayout botones = new HorizontalLayout(Delete, Cancel);
+
+            dialog.add(layoutdialog,botones);
+
+
+        });
+
+
     }
 
 }

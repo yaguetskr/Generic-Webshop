@@ -7,8 +7,6 @@
     <list default="true" id="011be9e7-31f8-4bf9-824c-40aa14debbd7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/products.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rest/frontend/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rest/frontend/API.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rest/frontend/Products.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rest/frontend/ProductsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rest/frontend/ProductsView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
