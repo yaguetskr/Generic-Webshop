@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration;
 import org.springframework.boot.json.GsonJsonParser;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,17 +20,20 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
+@RequestMapping("/Products")
 public class ProductController {
 
     private List<Product> products;
 
     @GetMapping("/getall")
     public List<Product> getall(){
+        this.loadjson();
         return products;
     }
 
     @GetMapping("/get")
     public Product get(@RequestParam(value = "id",defaultValue = "-1")int id){
+        this.loadjson();
 
         for (Product prod : products){
             if(prod.getId()==(id)){
@@ -43,8 +47,8 @@ public class ProductController {
     }
 
     @GetMapping("/edit")
-    public void edit(@RequestParam(value = "id")int id,@RequestParam( value = "stock" )int stock,@RequestParam( value = "price")float price,@RequestParam( value = "name")  String name) throws FileNotFoundException {
-
+    public void edit(@RequestParam int id,@RequestParam int stock,@RequestParam float price,@RequestParam String name) throws FileNotFoundException {
+        this.loadjson();
         for (int i = 0; i < products.size(); i++){
             if(products.get(i).getId()==(id)){
                 products.set(i,new Product(id,stock,price,name));
@@ -57,7 +61,8 @@ public class ProductController {
     }
 
     @GetMapping("/create")
-    public void create(@RequestParam( value = "stock" )int stock,@RequestParam( value = "price")float price,@RequestParam( value = "name")  String name) throws FileNotFoundException {
+    public void create(@RequestParam int stock,@RequestParam float price,@RequestParam String name) throws FileNotFoundException {
+        this.loadjson();
         int tempid=0;
         if(products.size()>0){
             tempid=products.get(products.size() - 1).getId()+1;
@@ -73,6 +78,7 @@ public class ProductController {
     @GetMapping("/delete")
     public void delete(@RequestParam(value = "id",defaultValue = "-1")int id) throws FileNotFoundException {
 
+        this.loadjson();
         for (int i = 0; i < products.size(); i++) {
             if (products.get(i).getId() == (id)) {
                 products.remove(i);
@@ -87,7 +93,7 @@ public class ProductController {
         Reader reader=null;
 
         try {
-            reader = Files.newBufferedReader(Paths.get("products.json"));
+            reader = Files.newBufferedReader(Paths.get("./src/main/resources/products.json"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -100,9 +106,9 @@ public class ProductController {
 
     public void savejson() throws FileNotFoundException {
         Gson gson=new Gson();
-        PrintWriter writer= new PrintWriter("products.json");
+        PrintWriter writer= new PrintWriter("./src/main/resources/products.json");
         writer.print(gson.toJson(this.products));
-        writer.close();vn
+        writer.close();
 
     }
 
