@@ -1,4 +1,4 @@
-package org.example;
+package com.rest;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
