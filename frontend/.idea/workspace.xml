@@ -5,21 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="011be9e7-31f8-4bf9-824c-40aa14debbd7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rest/frontend/ProductsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/rest/backend/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/rest/backend/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styles/README" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/styles/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rest/MainView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rest/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rest/Products.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rest/frontend/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rest/frontend/API.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/icons/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rest/frontend/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rest/frontend/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rest/frontend/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rest/frontend/Products.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

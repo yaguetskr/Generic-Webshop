@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
-@RequestMapping("/Products")
+@RequestMapping("/products")
 public class ProductController {
 
     private List<Product> products;
