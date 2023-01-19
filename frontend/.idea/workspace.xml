@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="011be9e7-31f8-4bf9-824c-40aa14debbd7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/rest/frontend/ProductsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/rest/backend/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/rest/backend/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/products.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rest/frontend/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rest/frontend/API.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rest/frontend/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rest/frontend/MainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rest/frontend/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rest/frontend/Products.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +49,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/proyectoscurriculum/frontend"
+    "last_opened_file_path": "D:/proyectoscurriculum/Generic-Webshop/frontend"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
